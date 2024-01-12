@@ -7,17 +7,17 @@ conv_shallow_params = {
     'num_slices': 50,
     'slice_shape': (3, 240, 20),
     'latent_size': 128,
-    'model_file': 'out/model_conv_shallow.pt'
+    'model_file': 'out/model_conv_shallow_decoder.pt'
 }
 
 conv_deep_params = {
     'num_slices': 31,
     'slice_shape': (3, 240, 32),
     'latent_size': 384,
-    'model_file': 'out/model_conv_deep.pt'
+    'model_file': 'out/model_conv_deep_decoder.pt'
 }
 
-parms = conv_shallow_params
+parms = conv_deep_params
 
 DEVICE = 'mps'
 
@@ -88,7 +88,7 @@ def sample_vae(model, lse, num_slices):
 def generate_and_display_images(sample_vae, model):
     window_name = 'VAE Landscape Movie'
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-    lse = LatentSpaceExplorer(parms['latent_size'], 'mps', parms['num_slices'])
+    lse = LatentSpaceExplorer(parms['latent_size'], DEVICE, parms['num_slices'])
 
     try:
         while True:
