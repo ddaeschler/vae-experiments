@@ -90,6 +90,8 @@ def generate_and_display_images(sample_vae, model):
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
     lse = LatentSpaceExplorer(parms['latent_size'], DEVICE, parms['num_slices'])
 
+    delay = 50
+
     try:
         while True:
             # Sample images from your VAE (adjust the function call as necessary)
@@ -105,8 +107,11 @@ def generate_and_display_images(sample_vae, model):
             cv2.imshow(window_name, stitched_image_cv)
 
             # Break the loop if 'q' is pressed
-            if cv2.waitKey(50) & 0xFF == ord('q'):
+            key = cv2.waitKey(delay) & 0xFF
+            if key == ord('q'):
                 break
+            elif key == ord('s'):
+                delay = 1000 if delay == 50 else 50
     finally:
         cv2.destroyAllWindows()
 
