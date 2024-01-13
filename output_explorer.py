@@ -1,7 +1,5 @@
 import cv2
 import torch
-import numpy as np
-import joblib
 
 conv_shallow_params = {
     'num_slices': 50,
