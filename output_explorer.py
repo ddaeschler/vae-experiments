@@ -13,7 +13,7 @@ conv_shallow_params = {
 conv_deep_params = {
     'num_slices': 31,
     'slice_shape': (3, 240, 32),
-    'latent_size': 384,
+    'latent_size': 256,
     'model_file': 'out/model_conv_deep_decoder.pt'
 }
 
