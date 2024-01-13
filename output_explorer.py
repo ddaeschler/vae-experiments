@@ -1,6 +1,13 @@
 import cv2
 import torch
 
+basic_params = {
+    'num_slices': 100,
+    'slice_shape': (3, 958, 40),
+    'latent_size': 71,
+    'model_file': 'out/model_basic_decoder.pt'
+}
+
 conv_shallow_params = {
     'num_slices': 50,
     'slice_shape': (3, 240, 20),
@@ -15,7 +22,7 @@ conv_deep_params = {
     'model_file': 'out/model_conv_deep_decoder.pt'
 }
 
-parms = conv_deep_params
+parms = basic_params
 
 DEVICE = 'mps'
 
