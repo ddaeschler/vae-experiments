@@ -1,4 +1,4 @@
 .idea/
-out/model.pt
-out/model_conv.pt
+out/*.pt
+out/*.pkl
 .DS_Store
