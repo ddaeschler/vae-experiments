@@ -4,7 +4,7 @@ import torch
 basic_params = {
     'num_slices': 100,
     'slice_shape': (3, 958, 40),
-    'latent_size': 71,
+    'latent_size': 287,
     'model_file': 'out/model_basic_decoder.pt'
 }
 
@@ -22,7 +22,7 @@ conv_deep_params = {
     'model_file': 'out/model_conv_deep_decoder.pt'
 }
 
-parms = basic_params
+parms = conv_shallow_params
 
 DEVICE = 'mps'
 
