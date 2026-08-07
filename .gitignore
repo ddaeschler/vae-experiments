@@ -2,3 +2,4 @@
 out/*.pt
 out/*.pkl
 .DS_Store
+.venv
